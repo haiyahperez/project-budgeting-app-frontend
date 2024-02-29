@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import {Routes, Route, Link } from "react-router-dom";
 
-// import Transactions from "../components/Transactions";
-// import TransactionDetails from "../components/TransactionDetails";
+import Transactions from "../components/Transactions";
+import TransactionDetails from "../components/TransactionDetails";
 // import TransactionForm from "../components/TransactionForm";
 
 const App = () => {
@@ -23,7 +23,7 @@ useEffect (() => {
   return (
   <header>
     <h1>Wallet Wizard</h1>
-
+    <Transactions transactions={transactions} setTransactions={setTransactions} />
   </header>
   )
 }
