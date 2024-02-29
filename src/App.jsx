@@ -21,10 +21,21 @@ useEffect (() => {
 }, [])
 
   return (
-  <header>
-    <h1>Wallet Wizard</h1>
-    <Transactions transactions={transactions} setTransactions={setTransactions} />
-  </header>
+  <div>
+    <nav>
+      <header>
+        <h1>Wallet Wizard</h1>
+      </header>
+    </nav>
+
+    <Routes>
+      <Route 
+      path="/"
+      element={
+        <Transactions transactions={transactions} setTransactions={setTransactions} />}
+        />
+    </Routes>
+  </div>
   )
 }
 export default App;
