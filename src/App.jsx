@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import {Routes, Route, Link } from "react-router-dom";
 
-import Transactions from "../components/Transactions";
-import TransactionDetails from "../components/TransactionDetails";
-import TransactionForm from "../components/TransactionForm";
+// import Transactions from "../components/Transactions";
+// import TransactionDetails from "../components/TransactionDetails";
+// import TransactionForm from "../components/TransactionForm";
 
 const App = () => {
   const [transactions, setTransactions] = useState([])
@@ -12,9 +12,10 @@ const App = () => {
   const [edit, setEdit] = useState({ show:false, id:null})
 
 useEffect (() => {
-  fetch("http://localhost:3000/transactions")
+  fetch("http://localhost:3003/transactions")
   .then((res) => res.json())
   .then((data) => {
+    // console.log(data)
     setTransactions(data.transactions)
   })
 }, [])
