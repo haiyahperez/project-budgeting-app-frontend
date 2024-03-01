@@ -3,7 +3,7 @@ import {Routes, Route, Link } from "react-router-dom";
 
 import Transactions from "../components/Transactions";
 import TransactionDetails from "../components/TransactionDetails";
-// import TransactionForm from "../components/TransactionForm";
+import TransactionForm from "../components/TransactionForm";
 
 const App = () => {
   const [transactions, setTransactions] = useState([])
@@ -32,8 +32,21 @@ useEffect (() => {
       <Route 
       path="/"
       element={
-        <Transactions transactions={transactions} setTransactions={setTransactions} />}
+        <Transactions 
+          transactions={transactions} 
+          setTransactions={setTransactions} />}
         />
+      <Route
+        path="/new"
+        element={
+          <TransactionForm 
+            edit={edit}
+            setEdit={setEdit}
+            setTransactions={setTransactions}
+            setToggleForm={setToggleForm}
+          />
+        }
+      />
     </Routes>
   </div>
   )
