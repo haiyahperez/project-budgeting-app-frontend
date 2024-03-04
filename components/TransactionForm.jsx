@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
-
 const TransactionForm = ({ setTransactions, setToggleForm, edit, setEdit }) => {
-    const navigate = useNavigate;
-    const { id } = useParams; 
+    const navigate = useNavigate();
+    const { id } = useParams(); 
     const [transaction, setTransaction] = useState({
         item: "",
         amount: "",
@@ -21,28 +19,41 @@ const TransactionForm = ({ setTransactions, setToggleForm, edit, setEdit }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-    
-        const options = {
-          method: id ? "PUT" : "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(transaction),
-        };
-    
-        const url = id
-          ? `http://localhost:3003/transactions/${id}`
-          : "http://localhost:3003/transactions";
-    
-        fetch(url, options)
-          .then((res) => res.json())
-          .then((data) => {
-            setTransactions(data.transactions);
-            setToggleForm(false);
-            navigate("/");
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      }
+
+        if (id) {
+            const options = {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(transaction),
+            };
+            
+            fetch(`http://localhost:3003/transactions/${id}`, options)
+                .then((res) => res.json())
+                .then((data) => setTransactions(data.transactions))
+                .then(() => navigate("/"))
+        } else {
+
+            const options = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(transaction),
+            };
+
+            fetch(`http://localhost:3003/transactions`, options)
+                .then((res) => res.json())
+                .then((data) => setTransactions(data.transactions))
+                .then(() => navigate("/"))
+            
+        }
+}
+
+    useEffect(() => {
+        if (id) {
+            fetch(`http://localhost:3003/transactions/${id}`)
+                .then((res) => res.json())
+                .then((data) => setTransaction(data.transaction))
+        }
+    }, [ id ])
 
     function handleCancel(){
         navigate("/")
@@ -50,7 +61,7 @@ const TransactionForm = ({ setTransactions, setToggleForm, edit, setEdit }) => {
 
 return (
     <div>
-        <h1> New Transaction Form </h1>
+        <h1>Transaction Form</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor="item">
                 Item:
@@ -59,7 +70,7 @@ return (
                 type="text"
                 id="item"
                 name="item"
-                value={transaction.item_name}
+                value={transaction.item}
             />
             </label>
             <label htmlFor="amount">
@@ -67,8 +78,8 @@ return (
             <input 
                 onChange={handleChange}
                 type="number"
-                id="item"
-                name="item"
+                id="amount"
+                name="amount"
                 value={transaction.amount}
             />
             </label>
@@ -102,7 +113,7 @@ return (
                 value={transaction.category}
             />
             </label>
-            <button onClick={handleSubmit}>Submit</button>
+            <button type="submit">Submit</button>
         </form>
         <button onClick={handleCancel}>Cancel</button>
     </div>

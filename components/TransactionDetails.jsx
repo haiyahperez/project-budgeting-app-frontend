@@ -16,9 +16,9 @@ const TransactionDetails = () => {
     return (
         <div>
             <h1> Transaction Details</h1>
-            <p>{transactionDetails.from}</p>
-            <p>{transactionDetails.item_name}</p>
-            <p>{transactionDetails.category}</p>
+            <p>From: {transactionDetails.from}</p>
+            <p>Item: {transactionDetails.item}</p>
+            <p>Category: {transactionDetails.category}</p>
         </div>
     )
 }

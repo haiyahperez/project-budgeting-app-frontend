@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+
+body {
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+.title {
+    margin: 0;
+    /* font-family: 'DM Serif Display', serif; */
+    font-size: 35px;
+    color: white;
+    
+}
+
+header a {
+    text-decoration: none;
+}
+
+
+.dm-serif-display-regular {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+li {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.add-trans{
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+
+input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
