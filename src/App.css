@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
+.green {
+    color:green;
+  }
+  
+.yellow {
+    color: yellow;
+  }
+
+.red {
+    color: red;
+  }
+
 body {
     font-family: 'Roboto Flex', serif;
     margin: 0;

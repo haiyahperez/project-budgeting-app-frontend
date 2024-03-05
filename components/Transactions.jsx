@@ -24,20 +24,20 @@ const Transactions = ({ transactions, setTransactions }) => {
   }, [transactions]);
   
 
-//   let sum = '';
-//   if (amount > 100) {
-//     sum = 'green';
-//   } else if (amount >= 0) {
-//     sum = 'yellow';
-//   } else {
-//     sum = 'red';
-//   }
+  let sum = '';
+  if (sumAmount > 100) {
+    sum = 'green';
+  } else if (sumAmount >= 0) {
+    sum = 'yellow';
+  } else {
+    sum = 'red';
+  }
 
   return (
     <div>
-    <div>
-       <p className="total-amount">Total Amount: {sumAmount}</p>
-    </div>
+     <div className='total-amount'>
+        Total Amount: <span className={`${sum}`}>{sumAmount}</span>
+      </div>
     
     <ul>
       {transactions.map(({ id, item, amount, date }) => (
