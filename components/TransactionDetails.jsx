@@ -14,11 +14,13 @@ const TransactionDetails = () => {
 
     if (!transactionDetails) return null;
     return (
-        <div>
+        <div className="trans-details">
             <h1> Transaction Details</h1>
-            <p>From: {transactionDetails.from}</p>
+            <div className="detail-name">
             <p>Item: {transactionDetails.item}</p>
+            <p>From: {transactionDetails.from}</p>
             <p>Category: {transactionDetails.category}</p>
+            </div>
         </div>
     )
 }

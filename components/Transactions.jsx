@@ -15,26 +15,28 @@ const Transactions = ({ transactions, setTransactions }) => {
   }
 
   useEffect(() => {
-    let sum = 0;
-    transactions.forEach(({ sum }) => {
-      sum += sum;
+    let sum= 0;
+    transactions.forEach((transaction) => {
+    const { amount } = transaction
+      sum += amount;
     });
     setSumAmount(sum);
   }, [transactions]);
+  
 
-  let totalSum = '';
-  if (sumAmount > 100) {
-    totalSum = 'green';
-  } else if (sumAmount >= 0) {
-    totalSum = 'yellow';
-  } else {
-    totalSum = 'red';
-  }
+//   let sum = '';
+//   if (amount > 100) {
+//     sum = 'green';
+//   } else if (amount >= 0) {
+//     sum = 'yellow';
+//   } else {
+//     sum = 'red';
+//   }
 
   return (
     <div>
     <div>
-       <p>Total Amount: {sumAmount}</p>
+       <p className="total-amount">Total Amount: {sumAmount}</p>
     </div>
     
     <ul>

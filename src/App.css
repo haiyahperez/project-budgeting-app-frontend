@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
 body {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Roboto Flex', serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
-
 
 nav {
     background-color: #333;
@@ -17,23 +16,20 @@ nav {
 
 .title {
     margin: 0;
-    /* font-family: 'DM Serif Display', serif; */
+    font-family: 'DM Serif Display', serif;
     font-size: 35px;
     color: white;
-    
 }
 
 header a {
     text-decoration: none;
 }
 
-
 .dm-serif-display-regular {
     font-family: 'DM Serif Display', serif;
     font-weight: 400;
     font-style: normal;
 }
-
 
 .container {
     max-width: 800px;
@@ -43,12 +39,10 @@ header a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 ul {
     list-style: none;
     padding: 0;
 }
-
 
 li {
     border-bottom: 1px solid #ccc;
@@ -59,7 +53,6 @@ li {
 h3 {
     margin-top: 0;
 }
-
 
 button {
     background-color: #007bff;
@@ -74,8 +67,12 @@ button:hover {
     background-color: #0056b3;
 }
 
-.add-trans{
+.add-trans {
     margin: 20px;
+}
+
+.total-amount {
+    font-size: 27px;
 }
 
 form {
@@ -83,15 +80,50 @@ form {
     flex-direction: column;
     max-width: 400px;
     margin: auto;
+    padding: 15px;
+    border: 2px solid grey;
 }
 
+.form-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto 10px; 
+    color: rgb(116, 190, 158);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
+.form-cancel {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.trans-details {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 15px;
+    border: 2px solid grey;
+}
+
+.detail-name p {
+    margin: 15px;
+}
 label {
-    margin-bottom: 0.5rem;
+    margin: 10px;
+    width: 200px; 
+    text-align: left; 
 }
-
 
 input {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 10px;
+    margin: 10px 10px 0px 0px;
+    width: 170%;
 }
