@@ -38,3 +38,5 @@ npm start
 ```
 
 The application should now be running at http://localhost:3000.
+
+### Netlify link: https://app.netlify.com/sites/walletwizardproject/overview
